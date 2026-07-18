@@ -15,47 +15,11 @@
   }
 }
 
-/* Custom Mesh Gradients for background hero and ambient glows */
-.mesh-gradient-light {
-  background-color: #FAF8F5;
-  background-image:
-    radial-gradient(at 5% 10%, rgba(16, 185, 129, 0.18) 0px, transparent 40%),
-    radial-gradient(at 95% 15%, rgba(245, 158, 11, 0.12) 0px, transparent 40%),
-    radial-gradient(at 50% 85%, rgba(52, 211, 153, 0.15) 0px, transparent 40%);
-}
-
-.mesh-gradient-dark {
-  background-color: #0F172A;
-  /* Tailwind slate-900 */
-  background-image:
-    radial-gradient(at 5% 10%, rgba(16, 185, 129, 0.12) 0px, transparent 45%),
-    radial-gradient(at 95% 15%, rgba(245, 158, 11, 0.08) 0px, transparent 45%),
-    radial-gradient(at 50% 85%, rgba(52, 211, 153, 0.1) 0px, transparent 45%);
-}
-
 /* Glassmorphism glass card styling */
 .glass-panel {
   @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 dark:border-slate-800/40;
 }
 
-/* Scroll indicator styling */
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 2s infinite;
-}
 
 /* Slide Down Animation for Mobile Menu */
 @keyframes slide-down {
@@ -89,38 +53,6 @@
   animation: fade-in 0.2s ease-out forwards;
 }
 
-/* Floating animation keyframes */
-@keyframes float-slow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-.animate-float-slow {
-  animation: float-slow 6s ease-in-out infinite;
-}
-
-@keyframes float-medium {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-float-medium {
-  animation: float-medium 4s ease-in-out infinite;
-}
 
 /* Marquee infinite scroll animation */
 @keyframes marquee-4x {
