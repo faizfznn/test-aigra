@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    @apply antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Mesh Gradients for background hero and ambient glows */
+.mesh-gradient-light {
+  background-color: #FAF8F5;
+  background-image:
+    radial-gradient(at 5% 10%, rgba(16, 185, 129, 0.18) 0px, transparent 40%),
+    radial-gradient(at 95% 15%, rgba(245, 158, 11, 0.12) 0px, transparent 40%),
+    radial-gradient(at 50% 85%, rgba(52, 211, 153, 0.15) 0px, transparent 40%);
+}
+
+.mesh-gradient-dark {
+  background-color: #0F172A;
+  /* Tailwind slate-900 */
+  background-image:
+    radial-gradient(at 5% 10%, rgba(16, 185, 129, 0.12) 0px, transparent 45%),
+    radial-gradient(at 95% 15%, rgba(245, 158, 11, 0.08) 0px, transparent 45%),
+    radial-gradient(at 50% 85%, rgba(52, 211, 153, 0.1) 0px, transparent 45%);
+}
+
+/* Glassmorphism glass card styling */
+.glass-panel {
+  @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 dark:border-slate-800/40;
+}
+
+/* Scroll indicator styling */
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+/* Slide Down Animation for Mobile Menu */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fade In Animation for validation errors */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+/* Floating animation keyframes */
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-medium {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-medium {
+  animation: float-medium 4s ease-in-out infinite;
+}
+
+/* Marquee infinite scroll animation */
+@keyframes marquee-4x {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-marquee-4x {
+  display: flex;
+  width: max-content;
+  animation: marquee-4x 18s linear infinite;
+}
+
+.animate-marquee-4x:hover {
+  animation-play-state: paused;
+}
+
+/* Precise rotations for About section cards on desktop */
+@media (min-width: 768px) {
+  .about-card-1 {
+    transform: rotate(-0.69deg) !important;
+  }
+
+  .about-card-2 {
+    transform: rotate(-6.74deg) !important;
+  }
+}
