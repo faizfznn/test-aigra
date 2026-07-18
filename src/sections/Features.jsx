@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Droplet, LayoutDashboard, BrainCircuit, Waves, Thermometer, Sun } from 'lucide-react';
-import Button from './Button';
+import Button from '../components/Button';
 
-/**
- * Features Section - AIGRA EON Branding
- * Renders a Bento Grid showing the core platform features. All features cards 
- * are styled with soft box-shadows, small icons on the left, and exact title typography.
- */
 export default function Features() {
-  // Smoothed out multi-layered box-shadow matching user specs with reduced opacity
   const cardShadow = {
     boxShadow: '0 58px 16px 0 rgba(0, 0, 0, 0.00), 0 37px 15px 0 rgba(0, 0, 0, 0.003), 0 21px 12px 0 rgba(0, 0, 0, 0.015), 0 9px 9px 0 rgba(0, 0, 0, 0.025), 0 2px 5px 0 rgba(0, 0, 0, 0.03)'
   };
@@ -19,25 +13,19 @@ export default function Features() {
       id="features"
       className="py-20 md:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative border-t border-b border-slate-200/20 dark:border-slate-800/20"
     >
-      {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-emerald-500/5 dark:bg-emerald-500/2 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[992px] mx-auto px-6 md:px-12 relative z-10">
-
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-2.5">
           <h2 className="font-sans text-[32px] md:text-[48px] font-bold text-[#071012] dark:text-white leading-[120%] tracking-tight text-center">
-            Apa yang membuat kami ‘beda’
+            Apa yang membuat kami 'beda'
           </h2>
           <p className="font-sans text-[18px] font-semibold text-[#454B4C] dark:text-slate-350 leading-[150%] text-center">
             Kita senang kamu bertanya
           </p>
         </div>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
-
-          {/* Card 1: Monitoring Sensor Real-Time (Wide - Double-Width) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +34,6 @@ export default function Features() {
             style={cardShadow}
             className="md:col-span-2 flex flex-col justify-between pt-[16px] pb-[16px] pl-[12.8px] pr-0 gap-[19.2px] rounded-[9.6px] border border-[#AEB1B2] dark:border-slate-800 bg-[#FBFDFD] dark:bg-slate-900/40 text-left"
           >
-            {/* Title with Icon on Left */}
             <div className="flex items-center gap-2 pr-[12.8px] w-full">
               <div className="w-[19.2px] h-[19.2px] flex items-center justify-center text-slate-850 dark:text-emerald-400 shrink-0">
                 <Smartphone size={16} className="stroke-[2.5]" />
@@ -56,9 +43,7 @@ export default function Features() {
               </h3>
             </div>
 
-            {/* List of active sensors */}
             <div className="flex flex-col gap-3 my-2 pr-[12.8px]">
-              {/* Sensor 1 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/45 text-emerald-600">
@@ -72,7 +57,6 @@ export default function Features() {
                 </div>
               </div>
 
-              {/* Sensor 2 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-amber-50 dark:bg-amber-955/45 text-amber-500">
@@ -86,7 +70,6 @@ export default function Features() {
                 </div>
               </div>
 
-              {/* Sensor 3 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-955/45 text-blue-500">
@@ -106,7 +89,6 @@ export default function Features() {
             </p>
           </motion.div>
 
-          {/* Card 2: Dashboard Terpusat (Narrow - Standard Width) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +97,6 @@ export default function Features() {
             style={cardShadow}
             className="md:col-span-1 flex flex-col justify-between pt-[16px] pb-[16px] pl-[12.8px] pr-0 gap-[19.2px] rounded-[9.6px] border border-[#AEB1B2] dark:border-slate-800 bg-[#FBFDFD] dark:bg-slate-900/40 text-left"
           >
-            {/* Title with Icon on Left */}
             <div className="flex items-center gap-2 pr-[12.8px] w-full">
               <div className="w-[19.2px] h-[19.2px] flex items-center justify-center text-slate-850 dark:text-emerald-400 shrink-0">
                 <LayoutDashboard size={16} className="stroke-[2.5]" />
@@ -125,7 +106,6 @@ export default function Features() {
               </h3>
             </div>
 
-            {/* Simulated mini analytics panel */}
             <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80 flex flex-col gap-3 my-2 mr-[12.8px]">
               <div className="flex justify-between items-center text-[10px] text-slate-400 font-bold">
                 <span>AKTIVITAS LAHAN</span>
@@ -146,7 +126,6 @@ export default function Features() {
             </p>
           </motion.div>
 
-          {/* Card 3: Sistem Irigasi Otomatis (Narrow - Standard Width) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +134,6 @@ export default function Features() {
             style={cardShadow}
             className="md:col-span-1 flex flex-col justify-between pt-[16px] pb-[16px] pl-[12.8px] pr-0 gap-[19.2px] rounded-[9.6px] border border-[#AEB1B2] dark:border-slate-800 bg-[#FBFDFD] dark:bg-slate-900/40 text-left"
           >
-            {/* Title with Icon on Left */}
             <div className="flex items-center gap-2 pr-[12.8px] w-full">
               <div className="w-[19.2px] h-[19.2px] flex items-center justify-center text-slate-850 dark:text-emerald-400 shrink-0">
                 <Waves size={16} className="stroke-[2.5]" />
@@ -165,21 +143,15 @@ export default function Features() {
               </h3>
             </div>
 
-            {/* List of watering valves status */}
             <div className="flex flex-col gap-3 my-2 pr-[12.8px]">
-              {/* Valve 1 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <span className="text-sm font-extrabold text-slate-800 dark:text-white">Katup Pompa Utama</span>
                 <span className="px-2 py-0.5 rounded-full text-[9px] bg-emerald-500/10 text-emerald-600 font-extrabold border border-emerald-500/20">AKTIF</span>
               </div>
-
-              {/* Valve 2 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <span className="text-sm font-extrabold text-slate-800 dark:text-white">Katup Zona A (Tomat)</span>
                 <span className="px-2 py-0.5 rounded-full text-[9px] bg-slate-100 dark:bg-slate-800 text-slate-505 font-extrabold border border-slate-200/50">TERTUTUP</span>
               </div>
-
-              {/* Valve 3 */}
               <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800/80">
                 <span className="text-sm font-extrabold text-slate-800 dark:text-white">Katup Zona B (Cabai)</span>
                 <span className="px-2 py-0.5 rounded-full text-[9px] bg-emerald-500/10 text-emerald-600 font-extrabold border border-emerald-500/20">TERBUKA</span>
@@ -191,7 +163,6 @@ export default function Features() {
             </p>
           </motion.div>
 
-          {/* Card 4: Rekomendasi Prediksi Panen (Wide - Double-Width) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +171,6 @@ export default function Features() {
             style={cardShadow}
             className="md:col-span-2 flex flex-col justify-between pt-[16px] pb-[16px] pl-[12.8px] pr-0 gap-[19.2px] rounded-[9.6px] border border-[#AEB1B2] dark:border-slate-800 bg-[#FBFDFD] dark:bg-slate-900/40 text-left"
           >
-            {/* Title with Icon on Left */}
             <div className="flex items-center gap-2 pr-[12.8px] w-full">
               <div className="w-[19.2px] h-[19.2px] flex items-center justify-center text-slate-850 dark:text-emerald-400 shrink-0">
                 <BrainCircuit size={16} className="stroke-[2.5]" />
@@ -210,7 +180,6 @@ export default function Features() {
               </h3>
             </div>
 
-            {/* Layout for AI recommendation details */}
             <div className="flex flex-col sm:flex-row gap-6 my-2 items-stretch sm:items-center justify-between pr-[12.8px]">
               <div className="max-w-sm">
                 <span className="text-4xl font-black text-emerald-600 dark:text-emerald-400 block tracking-tight">+12.4%</span>
@@ -220,7 +189,6 @@ export default function Features() {
                 </p>
               </div>
 
-              {/* Simulated diagnostic panel */}
               <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 shadow-sm flex-1 text-left flex flex-col gap-2 min-w-[220px]">
                 <div className="flex justify-between text-[11px] font-bold text-slate-400 pb-1.5 border-b border-slate-50 dark:border-slate-800">
                   <span>MODEL PREDIKTOR</span>
@@ -241,10 +209,8 @@ export default function Features() {
               * Rekomendasi dihitung berdasarkan data agronomis daerah Jawa Barat.
             </p>
           </motion.div>
-
         </div>
 
-        {/* Bottom Button "Mulai dari sekarang" (Light Blue Pill Button) */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -258,7 +224,6 @@ export default function Features() {
             </Button>
           </a>
         </motion.div>
-
       </div>
     </section>
   );
